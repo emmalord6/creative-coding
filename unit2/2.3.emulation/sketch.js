@@ -45,4 +45,6 @@ function setup() {
   strokeWeight(2); // Set the stroke weight to 2 pixels
   noFill(); // Disable filling for the border
   rect(redX * cellSize, redY * cellSize, cellSize, cellSize); // Draw the outline of the red square at its position
+
+  
 }
