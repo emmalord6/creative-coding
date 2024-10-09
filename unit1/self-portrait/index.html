@@ -4,17 +4,20 @@
     <meta charset="utf-8">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
     <title>My Self Portrait</title> 
-    <!-- this is for my "data self portrait" project -->
-    <!-- https://canvas.umw.edu/courses/1499064/assignments/11895984 -->
+    <!-- My self-portrait includes fun facts about me and multiple images representing my life. A little Easter egg in my project is the pink dots, which represent the number of pets I have had throughout my life. -->
+    
 
     <style>
         body {
+            /* references for creating dots: https://dev.to/clairecodes/how-to-create-a-polka-dot-background-with-css-23m0, https://youtu.be/vK8LvvcLpF0?si=vS4HbH0QOV5fpsvL, https://www.w3schools.com/cssref/pr_class_position.php, https://www.w3schools.com/html/html_classes.asp, https://p5js.org/reference/p5/windowResized/#:~:text=Reference%20windowResized()-,windowResized(),The%20event%20parameter%20is%20optional. */
+
             font-family: Verdana, sans-serif;
             background-color: #ecd6fc;
             color: #333;
             margin: 0;
             padding: 20px;
             text-align: center;
+            position: relative; /* allows dots to be positioned anywhere on the page */
         }
         img {
             width: 200px;
@@ -24,40 +27,64 @@
         }
         h2 {
             /* got help from: https://youtu.be/1eQQCEMeRfE?si=7_8U97y2Sk55mqTy */
-            border: 1px solid #aaa; /* gray border for headings */
+            border: 1px solid #aaa; 
             border-radius: 5px;
             padding: 10px;
-            background-color: #fff; /* white background for contrast */
-            display: inline-block; /* center the heading border */
+            background-color: #fff; 
+            display: inline-block; 
             margin: 20px 0;
         }
         p {
             /* got help from: https://youtu.be/PFl_v4FxBEI?si=7atjf_M2CqdsFplX */
-            border: 1px solid #aaa; /* gray border for paragraphs */
+            border: 1px solid #aaa; 
             border-radius: 5px;
             padding: 10px;
-            background-color: #f9f9f9; /* light background for text */
+            background-color: #f9f9f9; 
             margin: 10px 0;
+        }
+        .dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff69b4; /* color for dots */
+            border-radius: 50%; /* shape of dots */
         }
     </style>
 </head>
 <body>
     <!-- got help from: https://youtu.be/_w6N_nplmAw?si=rwmH9SrVkt_T7K0z -->
-    <h1>Emma Lord</h1> <!-- this is my name -->
-    <img src="emma.jpg"> <!-- this is my self-portrait -->
+    <h1>Emma Lord</h1>
+    <img src="emma.jpg"> 
     
-    <h2>A Little About Me</h2> <!-- this is about me -->
-    <p>I have three older brothers, two crazy cats, and a loyal dog. Family is everything to me!</p> <!-- my family -->
+    <h2>A Little About Me</h2>
+    <p>I have three older brothers, two crazy cats, and a loyal dog. Family is everything to me!</p> 
 
-    <h2>My Brothers</h2> <!-- this is about my brothers -->
-    <img src="brothers.jpg" alt="My Family"> <!-- my brothers' picture -->
+    <h2>My Brothers</h2>
+    <img src="brothers.jpg" alt="My Family"> 
     
-    <h2>My Kitties</h2> <!-- this is about my cats -->
-    <img src="cats.heic" alt="My Kitties"> <!-- my cats' picture -->
-    <p>Phoebe and Chloe!</p> <!-- my cats' names -->
+    <h2>My Kitties</h2>
+    <img src="cats.heic" alt="My Kitties"> 
+    <p>Phoebe and Chloe!</p> 
 
-    <h2>My Dog</h2> <!-- this is about my dog -->
-    <img src="dog.heic" alt="My Dog"> <!-- my dog's picture -->
-    <p>Rosco!</p> <!-- my dog's name -->
+    <h2>My Dog</h2>
+    <img src="dog.heic" alt="My Dog"> 
+    <p>Rosco!</p> 
+
+    <script>
+        function setup() {
+            createCanvas(windowWidth, windowHeight);
+            for (let i = 0; i < 12; i++) {
+                let x = random(width);
+                let y = random(height);
+                let dot = createDiv('');
+                dot.class('dot');
+                dot.position(x, y);
+            }
+        }
+        
+        function windowResized() {
+            resizeCanvas(windowWidth, windowHeight);
+        }
+    </script>
 </body>
 </html>
