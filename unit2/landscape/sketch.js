@@ -1,4 +1,4 @@
-// For my generative landscape, I decided to create an ocean with a beautiful gradient background and a moon that moves with each page refresh. 
+// for my generative landscape, i decided to create an ocean with a beautiful gradient background and a moon that moves with each page refresh. 
 
 // references: https://p5js.org/reference/p5/let/
 let moonX; // variable to store the moon's x position
