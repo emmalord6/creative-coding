@@ -1,6 +1,5 @@
 // for my generative landscape, i decided to create an ocean with a beautiful gradient background and a moon that moves with each page refresh. 
 
-
 // references: https://p5js.org/reference/p5/let/
 let moonX; // variable to store the moon's x position
 let moonY; // variable to store the moon's y position
@@ -48,7 +47,7 @@ function draw() {
 
   // draw the moon
   // reference: https://p5js.org/reference/p5/ellipse/
-  fill(255); // set the fill color to white
+  fill(255, 200); // set the fill color to white with reduced opacity
   noStroke(); // disable outlines for the moon
   ellipse(moonX, moonY, 80, 80); // draw the moon at a random position
 }
