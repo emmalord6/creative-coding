@@ -22,7 +22,7 @@ function draw() {
   // set the background with a gradient
   // loop through the height of the canvas to create a smooth gradient
   for (let i = 0; i <= height; i++) {
-    let inter = map(i, 0, height, 0, 1); // determine position in the gradient
+    let inter = map(i, 0, height, 0, 1); // determine position in gradient
     let startColor = color(100, 50, 150); // starting color for the gradient
     let endColor = color(0, 0, 255); // ending color for the gradient
     let c = lerpColor(startColor, endColor, inter); // create the gradient color
