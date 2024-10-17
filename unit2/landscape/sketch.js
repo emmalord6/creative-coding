@@ -1,6 +1,5 @@
 // For my generative landscape, I decided to create an ocean with a beautiful gradient background and a moon that moves with each page refresh. 
 
-
 // references: https://p5js.org/reference/p5/let/
 let moonX; // variable to store the moon's x position
 let moonY; // variable to store the moon's y position
@@ -40,8 +39,8 @@ function draw() {
 
   beginShape(); // begin a new shape for the waves
   vertex(0, height); // start at the bottom-left corner
-  bezierVertex(100, height * 0.7, 250, height * 0.5, 400, height * 0.6); // create the first wave
-  bezierVertex(550, height * 0.45, 700, height * 0.7, 800, height * 0.5); // create the second wave
+  bezierVertex(100, height * 0.8, 250, height * 0.7, 400, height * 0.7); // combine the first wave
+  bezierVertex(550, height * 0.55, 700, height * 0.8, 800, height * 0.6); // create the second wave
   vertex(width, height); // finish at the bottom-right corner
   endShape(CLOSE); // complete the shape
 
