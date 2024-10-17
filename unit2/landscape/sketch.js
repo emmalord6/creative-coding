@@ -8,7 +8,6 @@ function setup() {
   // create the canvas width and height
   createCanvas(800, 800);
 
-  // https://p5js.org/examples/calculating-values-random/
   // set random position for the moon at the top of the canvas
   moonX = random(50, width - 50); // keep it within the canvas
   moonY = random(50, 150); // keep it within the top area
@@ -20,11 +19,13 @@ function setup() {
 // https://p5js.org/reference/p5/stroke/
 // https://p5js.org/reference/p5/line/
 function draw() {
-  // set the background with a gradient sunset
+  // set the background with a gradient
   // loop through the height of the canvas to create a smooth gradient
   for (let i = 0; i <= height; i++) {
-    let inter = map(i, 0, height, 0, 1); // determine the position in the gradient
-    let c = lerpColor(lerpColor(color(100, 50, 150), color(255, 100, 150), inter), color(0, 0, 255), inter); // create the gradient color
+    let inter = map(i, 0, height, 0, 1); // determine position in the gradient
+    let startColor = color(100, 50, 150); // starting color for the gradient
+    let endColor = color(0, 0, 255); // ending color for the gradient
+    let c = lerpColor(startColor, endColor, inter); // create the gradient color
     stroke(c); // set the stroke color
     line(0, i, width, i); // draw a horizontal line across the width of the canvas
   }
