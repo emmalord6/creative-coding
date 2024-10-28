@@ -16,7 +16,7 @@ function draw() {
   fill(200, 160, 255); // purple for mouse position
   ellipse(mouseX, mouseY, 20, 20); // small circle to represent the mouse
 
-  // calculate distance between follower and mouse
+  // calculate distance between follower & mouse
   let dx = mouseX - x;
   let dy = mouseY - y;
   let distance = dist(mouseX, mouseY, x, y);
