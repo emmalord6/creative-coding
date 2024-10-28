@@ -13,7 +13,7 @@ function draw() {
   background(220); // light gray background
 
   // draw mouse position
-  fill(0, 0, 255); // blue for mouse position
+  fill(0, 0, 245); // blue for mouse position
   ellipse(mouseX, mouseY, 20, 20); // small circle to represent the mouse
 
   // calculate distance between follower and mouse
