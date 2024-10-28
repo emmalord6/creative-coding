@@ -28,7 +28,7 @@ function draw() {
   }
 
   // draw follower as a simple circle
-  fill(255, 0, 0); // red for follower
+  fill(255, 105, 180); // red for follower
   ellipse(x, y, 50, 50);
 
   // check if follower catches the mouse
