@@ -38,7 +38,7 @@ function draw() {
     y = random(height);
   }
 
-  // display score
+  // display the score
   fill(0);
   textSize(32);
   text("score: " + score, 10, 30);
