@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+  <title>Self Love: Reminders for Inner Peace</title>
+
+    <!-- 
+    For this remix, I've adapted Nick Montfort's original program to create Self Love, with the hope of spreading a little positivity during this time.
+
+    Link to original: https://nickm.com/poems/safety.html 
+
+    Safety, Copyright 2019 Nick Montfort <nickm@nickm.com>
+
+    Copying and distribution of this file, with or without modification, are
+    permitted in any medium without royalty provided the copyright notice and
+    this notice are preserved. This file is offered as-is, without any warranty.
+
+    I wrote this text generator in Python on April 7, 2008, never distributed or
+    exhibited it, and just found it recently among older files. On September 15,
+    2019, I wrote this HTML/JavaScript implementation of the generator. In terms
+    of the way text is generated, this version functions exactly as does the
+    2008 Python program. The typography is different, as the Python program runs
+    in a terminal window.
+-->
+
+    <script>
+      const title = [
+        ['Embrace the '],
+        ['', '', '', 'Radiant ', 'Beautiful ', 'Infinite ', 'Boundless '],
+        ['Light ', 'Energy ', 'Strength ', 'Calm ', 'Joy ', 'Love ', 'Kindness '],
+        ['Within', 'Inside', 'In Your Heart', 'Of Your Soul', 'In Your Being']
+      ],
+      text = [
+        [' BREATHE ',' REFLECT ',' EMBRACE ',' ACCEPT ',' NURTURE ',' HONOR ',
+         ' RELEASE ',' RECEIVE ',' TRUST ',' LOVE '],
+        ['YOURSELF','YOUR SOUL','YOUR HEART','YOUR DREAMS','YOUR JOURNEY',
+         'YOUR BODY','YOUR ENERGY','YOUR MIND','YOUR SPIRIT','YOUR PATH'],
+        ['', '', '', '', '', '', '', ' FULLY', ' GENTLY', ' WITH GRACE']
+      ];
+
+      function choice(array) {
+				return array[~~(Math.random() * array.length)];
+      }
+
+      function instruct() {
+        var headline = "", n, instructions = "",
+          head_div = document.getElementById("headline"),
+          inst_div = document.getElementById("instructions");
+        for (var i = 0 ; i < 4 ; i++) { headline += choice(title[i]); }
+        head_div.innerHTML = headline;
+        n = 2 + ~~(Math.random() * 8); // Between 2 and 10 affirmations
+        for (var i = 0 ; i < n ; i++) {
+          instructions += "<li>";
+          for (var j = 0 ; j < 3 ; j++) { instructions += choice(text[j]); }
+          instructions += "</li>";
+        }
+        inst_div.innerHTML = instructions;
+      }
+
+      function go() {
+        instruct();
+        setInterval(instruct, 5000);
+      }
+      </script>
+
+</head>
+<body onload=go() style="font-size:3.2vh; margin:7vh; font-family:sans-serif">
+  <h1 style="color:#FF69B4; text-align:center">YOU ARE WORTHY OF LOVE</h1>
+  <h2 style="color:#4B0082; text-align:center">Take a moment for yourself and
+		let these words remind you</h2>
+  <h1 id=headline style="display:flex; justify-content:center"></h1>
+  <div style="display:flex; justify-content:center">
+  <ol id=instructions></ul>
+  </div>
+</body>
+</html>

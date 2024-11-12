@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<!--
+
+For this remix, I've adapted Nick Montfort's original program to create Ariana's Discography Journey, because I love her music and know many others do too!
+
+Link to original: https://nickm.com/poems/through_the_park.html
+
+Through the Park
+Copyright (c) 2008, 2019 Nick Montfort <nickm@nickm.com>
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved. This file is offered as-is,
+without any warranty.
+
+-->
+<style>
+/* <![CDATA[ */
+body {
+ background: #282828;
+ color: #FF69B4;
+ margin: 24pt 24pt 0 24pt;
+ font-family: "Helvetica Neue", Helvetica, Arial, Nimbus Sans, Verdana, sans-serif;
+ font-size: 13pt;
+}
+div {
+ height: 16pt;
+}
+a {
+ color: #FFC0CB;
+ text-decoration: none;
+}
+/* ]]> */
+</style>
+<script>
+var sentences=[
+"The beat of '7 rings' echoes through the room",
+"A fan listens to 'Thank U, Next' on repeat",
+"The girl belts out 'Into You' at karaoke night",
+"A friend reminisces over 'One Last Time'",
+"The playlist shifts to 'No Tears Left to Cry'",
+"A voice hums the chorus of 'Positions'",
+"Someone shouts 'Yuh!' in sync with 'God is a Woman'",
+"The beat drops, and 'Problem' plays loud",
+"The friends harmonize to 'Almost is Never Enough'",
+"Ariana’s high note in 'Dangerous Woman' gives chills",
+"The fan replays 'Love Me Harder' with The Weeknd",
+"A shout of 'Thank U, Next' echoes at a party",
+"The melody of 'Side to Side' fills the air",
+"The girl remembers her first Ariana concert",
+"The crowd sings 'POV' together under neon lights",
+"Someone queues 'Break Free' for the 10th time",
+"Ariana's voice soothes through 'Be Alright'",
+"The fan lip-syncs 'Breathin' in front of the mirror",
+"Everyone sings 'Just Keep Breathin' on a tough day",
+"'Sweetener' is the album on repeat this week",
+"Friends celebrate to 'Right There' from the early days",
+"'Honeymoon Avenue' plays softly in the background",
+"A fan tries to hit the whistle notes in 'My Everything'",
+"The group chants 'Focus on me!' with the beat",
+"Echoes of 'Into You' fill the room with nostalgia"
+];
+var to_drop = 2 * sentences.length / 3;
+var n = 0;
+var text = ""
+function rand_range(max) {
+ return Math.floor(Math.random()*(max+1));
+}
+function drop(array) {
+ var to_remove = rand_range(array.length-1);
+ while (array[to_remove].length == 0) {
+  to_remove = rand_range(array.length-1);
+ }
+ array[to_remove] = '';
+ return array;
+}
+function story() {
+ var main=document.getElementById('main');
+ for (n=0; n<to_drop; n++) {
+  sentences = drop(sentences);
+ }
+ for (n=0; n<sentences.length; n++) {
+  if (sentences[n].length > 0) {
+   text += sentences[n] + ". ... "
+   }
+  }
+ last=document.createElement('div');
+ last.appendChild(document.createTextNode(text));
+ main.appendChild(last);
+}
+</script>
+  <title>Ariana's Discography Journey</title>
+</head>
+<body onload="story();">
+<div style="float:right; color:#FFC0CB; width:250px; font-style:italic">
+<p>Text &amp; Code: <a href="http://nickm.com">Nick Montfort</a></p>
+<p>This page, using a simple bit of JavaScript, generates different scenes celebrating Ariana Grande's discography by omitting different sentences at random each time. <a href="ariana_discography.html">Reload</a> for a different story.</p>
+</div>
+<div style="height:60pt; font-size:26pt; color:#FF69B4;">Ariana's Discography Journey</div>
+<div id="main" style="font-weight:bold; width:50%"></div>
+</body>
+</html>
