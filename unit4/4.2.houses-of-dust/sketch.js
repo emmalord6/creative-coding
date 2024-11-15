@@ -1,7 +1,46 @@
+let poem = '';
+
+let grammar = tracery.createGrammar({
+  "origin": ["A HOUSE OF #material# #place# #lightSource# #inhabitants#."],
+  "material": [
+    "MUD", "BRICKS", "LEAVES", "WEEDS", "GLASS", "STEEL", "PLASTIC", "PAPER",
+    "WOOD", "STONE", "SAND", "METAL", "FABRIC", "ASHES"
+  ],
+  "place": [
+    "IN A DESERT", "IN THE SEA", "IN A FOREST", "IN A CITY", 
+    "IN THE SKY", "IN TUNNELS", "IN SPACE", "IN A VALLEY", 
+    "IN A MEADOW", "IN A SWAMP", "IN A RIVER", "IN THE ARCTIC", 
+    "IN A CASTLE", "IN A FLOWER GARDEN"
+  ],
+  "lightSource": [
+    "USING CANDLES", "USING ELECTRICITY", "USING STARLIGHT", 
+    "USING FIREFLIES", "USING SOLAR PANELS", "USING MOONLIGHT", 
+    "USING TORCHES", "USING LANTERNS", "USING REFLECTIONS",
+    "USING SPOTLIGHTS", "USING GLOWING ROCKS", "USING NEON LIGHTS",
+    "USING LIGHTNING", "USING FLAMES", "USING MAGIC"
+  ],
+  "inhabitants": [
+    "INHABITED BY ARTISTS", "INHABITED BY A LONELY TRAVELER", 
+    "INHABITED BY DREAMERS", "INHABITED BY A CLOSE FAMILY", 
+    "INHABITED BY HOPELESS ROMANTICS", "INHABITED BY BOOK WORMS ", 
+    "INHABITED BY THE WHISPERS OF VOICES", "INHABITED BY CHILDREN WHO PAINT THE WALLS", 
+    "INHABITED BY A BAND OF STORYTELLERS", "INHABITED BY CRIMINALS WITH GOOD INTENT", 
+    "INHABITED BY A LOVING GROUP OF FRIENDS", "INHABITED BY HEALERS TENDING THE SICK", 
+    "INHABITED BY SISTERS", "INHABITED BY GHOSTS WE WANT TO SEE", 
+    "INHABITED BY SCIENTISTS STUDYING THE UNKNOWN"
+  ]
+});
+
 function setup() {
   createCanvas(800, 800);
+  frameRate(0.15);
 }
 
 function draw() {
   background(220);
+  poem = grammar.flatten("#origin#");
+  textFont("monospace");
+  textSize(24);
+  fill(0);
+  text(poem, 50, 200, 700, 400);
 }
