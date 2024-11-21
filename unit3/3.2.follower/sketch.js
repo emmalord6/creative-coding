@@ -30,7 +30,7 @@ function draw() {
   let dy = mouseY - y;
   let distance = dist(mouseX, mouseY, x, y);
 
-  // move follower toward the mouse
+  // move follower toward mouse
   if (distance > 5) {
     x += (dx / distance) * xspeed;
     y += (dy / distance) * yspeed;
