@@ -1,3 +1,5 @@
+// For my book project, I created a title page that represents the feel of turning a book page. I also added page numbers to the bottom margin and adjusted the typogrophy to look interesting, like the oddness of the book.
+
 let word = "imagine";
 let wc = 0;
 
