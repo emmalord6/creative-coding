@@ -81,6 +81,6 @@ function draw() {
 
 function keyPressed() {
     if (key === ' ' && !gameOver) {
-        note.velocity += note.lift; // apply lift to move the note up when the spacebar is pressed
+        note.velocity += note.lift; // apply lift to move note up when the spacebar is pressed
     }
 }
