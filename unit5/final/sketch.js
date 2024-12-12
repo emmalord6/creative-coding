@@ -70,17 +70,17 @@ function draw() {
 
         fill(255); // set text color to white
         textSize(24);
-        text('Score: ' + score, 10, 30); // display score
+        text('Score: ' + score, 10, 30); // display the score
     } else {
         textSize(32);
         textAlign(CENTER, CENTER);
         fill(255); // set text color to white
-        text('Aw...try again!', width / 2, height / 2); // display message when someone loses
+        text('Try Again!', width / 2, height / 2); // display message when someone loses
     }
 }
 
 function keyPressed() {
     if (key === ' ' && !gameOver) {
-        note.velocity += note.lift; // apply lift to move note up when the spacebar is pressed
+        note.velocity += note.lift; // apply lift to move the note up when the spacebar is pressed
     }
 }
