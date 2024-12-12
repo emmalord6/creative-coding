@@ -41,8 +41,8 @@ function draw() {
         textSize(32);
         text('♪', note.x, note.y); // display the note as a musical note
 
-        if (frameCount % 70 === 0) {
-            obstacles.push({ top: random(height / 2), bottom: random(height / 2), x: width, w: 20, speed: 4, passed: false }); // add new obstacles to the array
+        if (frameCount % 40 === 0) {
+            obstacles.push({ top: random(height / 2), bottom: random(height / 2), x: width, w: 20, speed: 8, passed: false }); // add new obstacles to the array
         }
 
         for (let i = obstacles.length - 1; i >= 0; i--) {
