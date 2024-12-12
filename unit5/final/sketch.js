@@ -70,7 +70,7 @@ function draw() {
 
         fill(255); // set text color to white
         textSize(24);
-        text('Score: ' + score, 10, 30); // display the score
+        text('Score: ' + score, 10, 30); // display score
     } else {
         textSize(32);
         textAlign(CENTER, CENTER);
