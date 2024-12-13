@@ -1,4 +1,4 @@
-// To enhance my generative landscape based on feedback, I made the waves move! This was super fun and I think it brings the piece together. :)
+// I made the waves move to upgrade my generative landscape based on feedback! Doing this was super fun, and it brought the piece together. 
 
 // references: https://p5js.org/reference/p5/let/
 let moonX; // variable to store the moon's x position

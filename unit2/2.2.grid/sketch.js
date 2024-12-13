@@ -1,4 +1,4 @@
-// I decided to animated my grid exercise and bring it to life. This transformation makes each square move dynamically, creating an engaging visual experience.
+// I decided to add animation for the grid exercise and bring my grid to life. This transformation makes each square move dynamically, creating an engaging visual experience.
 
 function setup() {
   // create a canvas of size 1200x1200 pixels
