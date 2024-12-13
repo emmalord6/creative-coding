@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<!--
+
+For this interation, I changed my one of my remix's to be Wicked themed! I saw the movie recently and greatly enjoyed it, so I thought this would be fun to come up with different phrases associated with the film. 
+
+Link to original: https://nickm.com/poems/through_the_park.html
+
+Through the Park
+Copyright (c) 2008, 2019 Nick Montfort <nickm@nickm.com>
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved. This file is offered as-is,
+without any warranty.
+
+-->
+<style>
+/* <![CDATA[ */
+body {
+ background: #000000;
+ color: #00FF00;
+ margin: 24pt 24pt 0 24pt;
+ font-family: "Helvetica Neue", Helvetica, Arial, Nimbus Sans, Verdana, sans-serif;
+ font-size: 13pt;
+}
+div {
+ height: 16pt;
+}
+a {
+ color: #FF69B4;
+ text-decoration: none;
+}
+/* ]]> */
+</style>
+<script>
+var sentences=[
+"The green light shines brightly over Oz",
+"Elphaba sings 'Defying Gravity' with all her might",
+"The witch flies above the crowd, defying expectations",
+"A student dreams of visiting the Emerald City",
+"The spell book glows with magical energy",
+"A voice echoes 'No Good Deed' in the distance",
+"Glinda sparkles in her pink dress, enchanting everyone",
+"The beat of 'Dancing Through Life' fills the air",
+"The citizens of Oz sing 'Wonderful' in harmony",
+"Elphaba's green skin glows under the moonlight",
+"The fan replays 'I'm Not That Girl' softly",
+"A shout of 'Popular' rings out at the party",
+"The melody of 'For Good' brings tears to eyes",
+"The girl remembers her first time seeing Wicked",
+"The crowd sings 'As Long As You're Mine' together",
+"Someone hums 'The Wizard and I' on repeat",
+"Elphaba's voice soothes through 'What Is This Feeling?'",
+"The fan lip-syncs 'Loathing' in front of the mirror",
+"Everyone sings 'No One Mourns the Wicked' on a tough day",
+"Wicked is the show on repeat this week",
+"Friends celebrate to 'One Short Day' in the Emerald City",
+"The story of 'Wicked' plays softly in the background",
+"A fan tries to hit the high notes in 'Defying Gravity'",
+"The group chants 'Thank Goodness!' with the beat",
+"Echoes of 'Wicked' fill the room with nostalgia"
+];
+var to_drop = 2 * sentences.length / 3;
+var n = 0;
+var text = ""
+function rand_range(max) {
+ return Math.floor(Math.random()*(max+1));
+}
+function drop(array) {
+ var to_remove = rand_range(array.length-1);
+ while (array[to_remove].length == 0) {
+  to_remove = rand_range(array.length-1);
+ }
+ array[to_remove] = '';
+ return array;
+}
+function story() {
+ var main=document.getElementById('main');
+ for (n=0; n<to_drop; n++) {
+  sentences = drop(sentences);
+ }
+ for (n=0; n<sentences.length; n++) {
+  if (sentences[n].length > 0) {
+   text += sentences[n] + ". ... "
+   }
+  }
+ last=document.createElement('div');
+ last.appendChild(document.createTextNode(text));
+ main.appendChild(last);
+}
+</script>
+  <title>Wicked Moments :)</title>
+</head>
+<body onload="story();">
+<div style="float:right; color:#FF69B4; width:250px; font-style:italic">
+<p>Text &amp; Code: <a href="http://nickm.com">Nick Montfort</a></p>
+<p>This page, using a simple bit of JavaScript, generates different scenes inspired by the musical Wicked by omitting different sentences at random each time. <a href="wicked_moments.html">Reload</a> for a different story.</p>
+</div>
+<div style="height:60pt; font-size:26pt; color:#00FF00;">Wicked Moments Journey</div>
+<div id="main" style="font-weight:bold; width:50%"></div>
+</body>
+</html>

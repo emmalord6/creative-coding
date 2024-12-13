@@ -1,9 +1,9 @@
+// I decided to animated my grid exercise and bring it to life. This transformation makes each square move dynamically, creating an engaging visual experience.
+
 function setup() {
   // create a canvas of size 1200x1200 pixels
   createCanvas(1200, 1200);
-
-  // disable animation to only draw once
-  noLoop();
+  frameRate(15); // lower frame rate for slower animation
 }
 
 function draw() {
@@ -36,10 +36,14 @@ function draw() {
       stroke(random(255), random(255), random(255));
       fill(random(255), random(255), random(255), 150);
 
-      // draw a square in the center of the grid cell
+      // animate the position of the squares
+      let offsetX = map(noise(frameCount * 0.005 + x), 0, 1, -w * 0.1, w * 0.1); // slower noise change
+      let offsetY = map(noise(frameCount * 0.005 + y), 0, 1, -h * 0.1, h * 0.1); // slower noise change
+
+      // draw a square in the center of the grid cell with animated position
       // reference: https://p5js.org/reference/p5/rect/
       let squareSize = w * 0.8; // size of the square
-      rect(x + w * 0.1, y + h * 0.1, squareSize, squareSize); // draw the square
+      rect(x + w * 0.1 + offsetX, y + h * 0.1 + offsetY, squareSize, squareSize); // draw the square
     }
   }
 }

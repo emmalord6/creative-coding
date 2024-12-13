@@ -11,37 +11,63 @@
 
     <style type="text/css">
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Courier New', monospace;
             text-align: center;
-            padding: 50px;
-            background: #f0f0f0;
+            background: #282828;
             margin: 0;
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-        .manifesto {
-            font-size: 24px;
-            color: #333;
-            font-weight: 300;
-            line-height: 1.5;
-        }
-        .crazy {
-            font-size: 80px;
-            color: #ff007f; /* Pink color */
-            font-weight: 900;
-            background: linear-gradient(45deg, #ff007f, #ff8c00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 4px 4px 8px rgba(0,0,0,0.3);
-            letter-spacing: 2px;
+            color: #ffffff; /* Default text color */
         }
     </style>
 </head>
 <body>
     <div class="manifesto">
-        <p>Here's to the <span class="crazy">CRAZY</span> one's</p>
+        <p>Here's to the <span class="crazy" id="crazy">CRAZY</span> one's</p>
     </div>
+
+    <script>
+        let size = 80;
+        let growing = true;
+
+        function setup() {
+            createCanvas(windowWidth, windowHeight);
+            textFont('Courier New');
+            textAlign(CENTER, CENTER);
+        }
+
+        function draw() {
+            background(40, 40, 40); // dark gray background
+
+            fill(255); // white color for "Here's to the one's"
+            textSize(32);
+            text("Here's to the", windowWidth / 2, windowHeight / 2 - 100);
+            text("one's", windowWidth / 2, windowHeight / 2 + 60);
+
+            // Draw and animate the word "CRAZY"
+            fill(0, 255, 0); // bright green color for "CRAZY"
+            textSize(size);
+            text("CRAZY", windowWidth / 2, windowHeight / 2 - 20);
+
+            if (growing) {
+                size += 2;
+                if (size > 120) {
+                    growing = false;
+                }
+            } else {
+                size -= 2;
+                if (size < 80) {
+                    growing = true;
+                }
+            }
+        }
+
+        function windowResized() {
+            resizeCanvas(windowWidth, windowHeight);
+        }
+    </script>
+
 </body>
 </html>

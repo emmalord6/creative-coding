@@ -1,8 +1,9 @@
-// for my generative landscape, i decided to create an ocean with a beautiful gradient background and a moon that moves with each page refresh. 
+// To enhance my generative landscape based on feedback, I made the waves move! This was super fun and I think it brings the piece together. :)
 
 // references: https://p5js.org/reference/p5/let/
 let moonX; // variable to store the moon's x position
 let moonY; // variable to store the moon's y position
+let waveMovement = 0; // variable to help move the waves
 
 function setup() {
   // create the canvas width and height
@@ -33,17 +34,24 @@ function draw() {
   // draw the ocean waves
   noStroke(); // disable outlines for the wave shape
   fill(0, 0, 139, 180); // set the fill color to dark blue
-  
+
   // references: 
   // https://p5js.org/reference/p5/beginShape/
-  // https://p5js.org/reference/p5/bezierVertex/
+  // https://p5js.org/reference/p5/vertex/
 
   beginShape(); // begin a new shape for the waves
   vertex(0, height); // start at the bottom-left corner
-  bezierVertex(100, height * 0.8, 250, height * 0.7, 400, height * 0.7); // combine the first wave
-  bezierVertex(550, height * 0.55, 700, height * 0.8, 800, height * 0.6); // create the second wave
+
+  // create wave effect using sine function
+  for (let x = 0; x <= width; x += 20) {
+    let y = height * 0.8 + sin((x + waveMovement) * 0.05) * 20;
+    vertex(x, y); // create vertex at the wave position
+  }
+
   vertex(width, height); // finish at the bottom-right corner
   endShape(CLOSE); // complete the shape
+
+  waveMovement += 2; // update movement to move waves
 
   // draw the moon
   // reference: https://p5js.org/reference/p5/ellipse/
